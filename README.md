@@ -15,7 +15,7 @@ const math = new Randomath();
 
 &nbsp;
 
-## Output example of `getRandomAdd()` method
+### Output example of `getRandomAdd()` method
 ```javascript
 [
   {
@@ -26,12 +26,10 @@ const math = new Randomath();
   }
 ]
 ```
-
 &nbsp;
 
 _Default number of examples is one. You can change it by replacing times to the number of repeats you need._
 _For example `getRandomAdd(3)` will return 3 addition examples._
-
 &nbsp;
 
 _Each method returns an array of objects._
