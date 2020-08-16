@@ -1,0 +1,15 @@
+{
+  "name": "randommath",
+  "version": "1.0.0",
+  "description": "Random math examples of addition, subtraction, multiplication and division with fake answers and true ones.",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo Go to /example/app.js and try node app.js"
+  },
+  "keywords": [
+    "math",
+    "random"
+  ],
+  "author": "softik",
+  "license": "MIT"
+}
