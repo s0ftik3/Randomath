@@ -12,16 +12,16 @@ const math = new Randomath();
 ### `getRandomSubtract(times)` — returns a random addition example.
 ### `getRandomMultiply(times)` — returns a random addition example.
 ### `getRandomDivide(times)` — returns a random addition example.
-
 &nbsp;
 
 ### Output example of `getRandomAdd()` method
 ```javascript
 [
   {
-    equation: '97 + 16',
-    answers: [ 113, 114, 115 ],
-    answer: 113,
+    example: '51 - 88',
+    answers: [ -41, -37, -39 ],
+    answer: -37,
+    answerId: 1,
     isRound: false
   }
 ]

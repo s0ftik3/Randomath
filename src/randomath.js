@@ -10,10 +10,10 @@ class Randomath {
     getRandomAdd(times = 1) {
         // Main arrays and variables
         let fakeAnswers = [];
-        let equation = [];
+        let example = [];
         let spare = times;
 
-        // Creating new equations. Default = 1 time
+        // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
             // Two random number that will be added
             let a = Math.floor(Math.random() * 100);
@@ -46,11 +46,12 @@ class Randomath {
 
             shuffle(fakeAnswers)
         
-            // Complete the array of equation(s)
-            equation.push({
-                equation: a + ' + ' + b,
+            // Complete the array of example(s)
+            example.push({
+                example: a + ' + ' + b,
                 answers: fakeAnswers,
                 answer: answer,
+                answerId: fakeAnswers.indexOf(answer),
                 isRound: false
             })
     
@@ -60,7 +61,7 @@ class Randomath {
         }
     
         // Return the result
-        return equation;
+        return example;
     }
 
     /**
@@ -71,10 +72,10 @@ class Randomath {
     getRandomSubtract(times = 1) {
         // Main arrays and variables
         let fakeAnswers = [];
-        let equation = [];
+        let example = [];
         let spare = times;
     
-        // Creating new equations. Default = 1 time
+        // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
             // Two random number that will be subtracted
             let a = Math.floor(Math.random() * 100);
@@ -107,11 +108,12 @@ class Randomath {
 
             shuffle(fakeAnswers)
         
-            // Complete the array of equation(s)
-            equation.push({
-                equation: a + ' - ' + b,
+            // Complete the array of example(s)
+            example.push({
+                example: a + ' - ' + b,
                 answers: fakeAnswers,
                 answer: answer,
+                answerId: fakeAnswers.indexOf(answer),
                 isRound: false
             })
             
@@ -121,7 +123,7 @@ class Randomath {
         }
 
         // Return the result
-        return equation;
+        return example;
     }
 
     /**
@@ -132,10 +134,10 @@ class Randomath {
     getRandomMultiply(times = 1) {
         // Main arrays and variables
         let fakeAnswers = [];
-        let equation = [];
+        let example = [];
         let spare = times;
     
-        // Creating new equations. Default = 1 time
+        // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
             // Two random number that will be multiplied
             let a = Math.floor(Math.random() * 100);
@@ -168,11 +170,12 @@ class Randomath {
 
             shuffle(fakeAnswers)
         
-            // Complete the array of equation(s)
-            equation.push({
-                equation: a + ' * ' + b,
+            // Complete the array of example(s)
+            example.push({
+                example: a + ' * ' + b,
                 answers: fakeAnswers,
                 answer: answer,
+                answerId: fakeAnswers.indexOf(answer),
                 isRound: false
             })
             
@@ -182,7 +185,7 @@ class Randomath {
         }
 
         // Return the result
-        return equation;
+        return example;
     }
 
     /**
@@ -193,10 +196,10 @@ class Randomath {
     getRandomDivide(times = 1) {
         // Main arrays and variables
         let fakeAnswers = [];
-        let equation = [];
+        let example = [];
         let spare = times;
     
-        // Creating new equations. Default = 1 time
+        // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
             // Two random number that will be divided
             let a = Math.floor(Math.random() * 100);
@@ -229,11 +232,12 @@ class Randomath {
 
             shuffle(fakeAnswers)
         
-            // Complete the array of equation(s)
-            equation.push({
-                equation: a + ' / ' + b,
+            // Complete the array of example(s)
+            example.push({
+                example: a + ' / ' + b,
                 answers: fakeAnswers,
                 answer: answer,
+                answerId: fakeAnswers.indexOf(answer),
                 isRound: true
             })
             
@@ -243,7 +247,7 @@ class Randomath {
         }
 
         // Return the result
-        return equation;
+        return example;
     }
 
 }
