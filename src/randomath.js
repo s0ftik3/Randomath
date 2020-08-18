@@ -21,10 +21,17 @@ class Randomath {
         
             // True answer
             let answer = a + b;
+
+            // An array for fake numbers
+            let num = [];
         
             // Generate false answers
             for (let i = 0; i < 2; i++) {
-                let temp = a + b + Math.floor(Math.random() * 5);
+                // New fake number. Either subtraction of the answer or addition
+                num.push(a + b + Math.floor(Math.random() * 5))
+                num.push(a + b - Math.floor(Math.random() * 5))
+
+                let temp = num[Math.floor(Math.random() * num.length)]
                 if (temp == answer || temp == old.add) {
                     return this.getRandomAdd(spare);
                 } else {
@@ -51,8 +58,7 @@ class Randomath {
                 example: a + ' + ' + b,
                 answers: fakeAnswers,
                 answer: answer,
-                answerId: fakeAnswers.indexOf(answer),
-                isRound: false
+                answerId: fakeAnswers.indexOf(answer)
             })
     
             // Clear false answers array. In case if you need to repeat the 
@@ -83,10 +89,17 @@ class Randomath {
         
             // True answer
             let answer = a - b;
+
+            // An array for fake numbers
+            let num = [];
         
             // Generate false answers
             for (let i = 0; i < 2; i++) {
-                let temp = a - b - Math.floor(Math.random() * 5);
+                // New fake number. Either subtraction of the answer or addition
+                num.push(a - b - Math.floor(Math.random() * 5))
+                num.push(a - b + Math.floor(Math.random() * 5))
+
+                let temp = num[Math.floor(Math.random() * num.length)]
                 if (temp == answer || temp == old.sub) {
                     return this.getRandomSubtract(spare);
                 } else {
@@ -113,8 +126,7 @@ class Randomath {
                 example: a + ' - ' + b,
                 answers: fakeAnswers,
                 answer: answer,
-                answerId: fakeAnswers.indexOf(answer),
-                isRound: false
+                answerId: fakeAnswers.indexOf(answer)
             })
             
             // Clear false answers array. In case if you need to repeat the 
@@ -145,10 +157,17 @@ class Randomath {
         
             // True answer
             let answer = a * b;
+
+            // An array for fake numbers
+            let num = [];
         
             // Generate false answers
             for (let i = 0; i < 2; i++) {
-                let temp = a * b * Math.floor(Math.random() * 3 + 1);
+                // New fake number. Either subtraction of the answer or addition
+                num.push(a * b + Math.floor(Math.random() * 3 + 1))
+                num.push(a * b - Math.floor(Math.random() * 3 + 1))
+
+                let temp = num[Math.floor(Math.random() * num.length)]
                 if (temp == answer || temp == old.mult) {
                     return this.getRandomMultiply(spare);
                 } else {
@@ -175,8 +194,7 @@ class Randomath {
                 example: a + ' * ' + b,
                 answers: fakeAnswers,
                 answer: answer,
-                answerId: fakeAnswers.indexOf(answer),
-                isRound: false
+                answerId: fakeAnswers.indexOf(answer)
             })
             
             // Clear false answers array. In case if you need to repeat the 
@@ -204,13 +222,25 @@ class Randomath {
             // Two random number that will be divided
             let a = Math.floor(Math.random() * 100);
             let b = Math.floor(Math.random() * 100);
+
+            // Only divisible numbers
+            if (a % b !== 0) {
+                return this.getRandomDivide(spare);
+            } 
         
             // True answer
             let answer = Math.round(a / b);
+
+            // An array for fake numbers
+            let num = [];
         
             // Generate false answers
             for (let i = 0; i < 2; i++) {
-                let temp = Math.round(a / b / Math.floor(Math.random() * 3 + 1));
+                // New fake number. Either subtraction of the answer or addition
+                num.push(a / b + Math.floor(Math.random() * 3 + 1))
+                num.push(a / b - Math.floor(Math.random() * 3 + 1))
+
+                let temp = num[Math.floor(Math.random() * num.length)]
                 if (temp == answer || temp == old.dev) {
                     return this.getRandomDivide(spare);
                 } else {
@@ -237,8 +267,7 @@ class Randomath {
                 example: a + ' / ' + b,
                 answers: fakeAnswers,
                 answer: answer,
-                answerId: fakeAnswers.indexOf(answer),
-                isRound: true
+                answerId: fakeAnswers.indexOf(answer)
             })
             
             // Clear false answers array. In case if you need to repeat the 
