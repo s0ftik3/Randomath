@@ -28,10 +28,10 @@ class Randomath {
             // Generate false answers
             for (let i = 0; i < 2; i++) {
                 // New fake number. Either subtraction of the answer or addition
-                num.push(a + b + Math.floor(Math.random() * 5))
-                num.push(a + b - Math.floor(Math.random() * 5))
+                num.push(a + b + Math.floor(Math.random() * 5));
+                num.push(a + b - Math.floor(Math.random() * 5));
 
-                let temp = num[Math.floor(Math.random() * num.length)]
+                let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.add) {
                     return this.getRandomAdd(spare);
                 } else {
@@ -96,10 +96,10 @@ class Randomath {
             // Generate false answers
             for (let i = 0; i < 2; i++) {
                 // New fake number. Either subtraction of the answer or addition
-                num.push(a - b - Math.floor(Math.random() * 5))
-                num.push(a - b + Math.floor(Math.random() * 5))
+                num.push(a - b - Math.floor(Math.random() * 5));
+                num.push(a - b + Math.floor(Math.random() * 5));
 
-                let temp = num[Math.floor(Math.random() * num.length)]
+                let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.sub) {
                     return this.getRandomSubtract(spare);
                 } else {
@@ -164,10 +164,10 @@ class Randomath {
             // Generate false answers
             for (let i = 0; i < 2; i++) {
                 // New fake number. Either subtraction of the answer or addition
-                num.push(a * b + Math.floor(Math.random() * 3 + 1))
-                num.push(a * b - Math.floor(Math.random() * 3 + 1))
+                num.push(a * b + Math.floor(Math.random() * 3 + 1));
+                num.push(a * b - Math.floor(Math.random() * 3 + 1));
 
-                let temp = num[Math.floor(Math.random() * num.length)]
+                let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.mult) {
                     return this.getRandomMultiply(spare);
                 } else {
@@ -237,10 +237,10 @@ class Randomath {
             // Generate false answers
             for (let i = 0; i < 2; i++) {
                 // New fake number. Either subtraction of the answer or addition
-                num.push(a / b + Math.floor(Math.random() * 3 + 1))
-                num.push(a / b - Math.floor(Math.random() * 3 + 1))
+                num.push(a / b + Math.floor(Math.random() * 3 + 1));
+                num.push(a / b - Math.floor(Math.random() * 3 + 1));
 
-                let temp = num[Math.floor(Math.random() * num.length)]
+                let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.dev) {
                     return this.getRandomDivide(spare);
                 } else {
@@ -273,6 +273,45 @@ class Randomath {
             // Clear false answers array. In case if you need to repeat the 
             // function more than one time.
             fakeAnswers = [];
+        }
+
+        // Return the result
+        return example;
+    }
+
+    /**
+     * Returns a random comparison
+     * @public
+     * @param {number} times Number of repeats. Default is 1
+     */
+    getRandomCompare(times = 1) {
+        // Main arrays 
+        let example = [];
+        let __answers = ['>', '<'];
+    
+        // Creating new examples. Default = 1 time
+        for (let i = 0; i < times; i++) {
+            // Two random number that will be compared
+            let a = Math.floor(Math.random() * 100);
+            let b = Math.floor(Math.random() * 100);
+
+            // Variable for an answer
+            let answer;
+            
+            // Define the answer
+            if (a > b) {
+                answer = '>';
+            } else {
+                answer = '<';
+            }
+        
+            // Complete the array of example(s)
+            example.push({
+                example: a + ' ? ' + b,
+                answers: __answers,
+                answer: answer,
+                answerId: __answers.indexOf(answer)
+            })
         }
 
         // Return the result

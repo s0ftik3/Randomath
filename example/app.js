@@ -12,3 +12,6 @@ console.log(math.getRandomMultiply());
 
 // getRandomDivide method example
 console.log(math.getRandomDivide());
+
+// getRandomCompare method example
+console.log(math.getRandomCompare());
