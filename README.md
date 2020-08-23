@@ -9,10 +9,10 @@ const math = new Randomath();
 
 # Methods
 ### `getRandomAdd(times)` — returns a random addition example.
-### `getRandomSubtract(times)` — returns a random addition example.
-### `getRandomMultiply(times)` — returns a random addition example.
-### `getRandomDivide(times)` — returns a random addition example.
-### `getRandomCompare(times)` — returns a random addition example.
+### `getRandomSubtract(times)` — returns a random subtraction example.
+### `getRandomMultiply(times)` — returns a random multiplication example.
+### `getRandomDivide(times)` — returns a random division example.
+### `getRandomCompare(times)` — returns a random comparison example.
 &nbsp;
 
 ### Output example of `getRandomAdd` method
