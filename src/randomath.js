@@ -288,12 +288,16 @@ class Randomath {
         // Main arrays 
         let example = [];
         let __answers = ['>', '<'];
+        let spare = times;
     
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
             // Two random number that will be compared
             let a = Math.floor(Math.random() * 100);
             let b = Math.floor(Math.random() * 100);
+
+            // There are shouldn't be the same numbers
+            if (a === b) return this.getRandomCompare(spare);
 
             // Variable for an answer
             let answer;
