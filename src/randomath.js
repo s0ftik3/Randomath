@@ -3,22 +3,25 @@ const old = require('./old.json');
 class Randomath {
 
     /**
-     * Returns a random addition
+     * Return a random mathematical addition example
      * @public
-     * @param {number} times Number of repeats. Default is 1
+     * @param {number} times defines the function's number of repeats
+     * @param {number} difficulty defines the example(s) difficulty. From 0 to 2 (0 - easy, 1 - medium, 2 - hard)
      */
-    getRandomAdd(times = 1) {
+    getRandomAdd(times = 1, difficulty = 0) {
         // Main arrays and variables
         let fakeAnswers = [];
         let example = [];
-        let spare = times;
 
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
+            // Define the difficulty
+            let k = (difficulty === 0) ? 100 : (difficulty === 1) ? 200 : 300;
+
             // Two random number that will be added
-            let a = Math.floor(Math.random() * 100);
-            let b = Math.floor(Math.random() * 100);
-        
+            let a = Math.floor(Math.random() * k);
+            let b = Math.floor(Math.random() * k);
+
             // True answer
             let answer = a + b;
 
@@ -33,7 +36,7 @@ class Randomath {
 
                 let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.add) {
-                    return this.getRandomAdd(spare);
+                    return this.getRandomAdd(times, difficulty);
                 } else {
                     fakeAnswers.push(temp);
                     old.add = temp;
@@ -71,21 +74,24 @@ class Randomath {
     }
 
     /**
-     * Returns a random subtraction
+     * Return a random mathematical subtraction example 
      * @public
-     * @param {number} times Number of repeats. Default is 1
+     * @param {number} times defines the function's number of repeats
+     * @param {number} difficulty defines the example(s) difficulty. From 0 to 2 (0 - easy, 1 - medium, 2 - hard)
      */
-    getRandomSubtract(times = 1) {
+    getRandomSubtract(times = 1, difficulty = 0) {
         // Main arrays and variables
         let fakeAnswers = [];
         let example = [];
-        let spare = times;
     
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
-            // Two random number that will be subtracted
-            let a = Math.floor(Math.random() * 100);
-            let b = Math.floor(Math.random() * 100);
+            // Define the difficulty
+            let k = (difficulty === 0) ? 100 : (difficulty === 1) ? 200 : 300;
+
+            // Two random number that will be added
+            let a = Math.floor(Math.random() * k);
+            let b = Math.floor(Math.random() * k);
         
             // True answer
             let answer = a - b;
@@ -101,7 +107,7 @@ class Randomath {
 
                 let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.sub) {
-                    return this.getRandomSubtract(spare);
+                    return this.getRandomSubtract(times, difficulty);
                 } else {
                     fakeAnswers.push(temp);
                     old.sub = temp;
@@ -139,21 +145,24 @@ class Randomath {
     }
 
     /**
-     * Returns a random multiplication
+     * Return a random mathematical multiplication example
      * @public
-     * @param {number} times Number of repeats. Default is 1
+     * @param {number} times defines the function's number of repeats
+     * @param {number} difficulty defines the example(s) difficulty. From 0 to 2 (0 - easy, 1 - medium, 2 - hard)
      */
-    getRandomMultiply(times = 1) {
+    getRandomMultiply(times = 1, difficulty = 0) {
         // Main arrays and variables
         let fakeAnswers = [];
         let example = [];
-        let spare = times;
     
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
-            // Two random number that will be multiplied
-            let a = Math.floor(Math.random() * 100);
-            let b = Math.floor(Math.random() * 100);
+            // Define the difficulty
+            let k = (difficulty === 0) ? 100 : (difficulty === 1) ? 200 : 300;
+
+            // Two random number that will be added
+            let a = Math.floor(Math.random() * k);
+            let b = Math.floor(Math.random() * k);
         
             // True answer
             let answer = a * b;
@@ -169,7 +178,7 @@ class Randomath {
 
                 let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.mult) {
-                    return this.getRandomMultiply(spare);
+                    return this.getRandomMultiply(times, difficulty);
                 } else {
                     fakeAnswers.push(temp);
                     old.mult = temp;
@@ -207,25 +216,28 @@ class Randomath {
     }
 
     /**
-     * Returns a random division
+     * Return a random mathematical division example
      * @public
-     * @param {number} times Number of repeats. Default is 1
+     * @param {number} times defines the function's number of repeats
+     * @param {number} difficulty defines the example(s) difficulty. From 0 to 2 (0 - easy, 1 - medium, 2 - hard)
      */
-    getRandomDivide(times = 1) {
+    getRandomDivide(times = 1, difficulty = 0) {
         // Main arrays and variables
         let fakeAnswers = [];
         let example = [];
-        let spare = times;
     
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
-            // Two random number that will be divided
-            let a = Math.floor(Math.random() * 100);
-            let b = Math.floor(Math.random() * 100);
+            // Define the difficulty
+            let k = (difficulty === 0) ? 100 : (difficulty === 1) ? 200 : 300;
+
+            // Two random number that will be added
+            let a = Math.floor(Math.random() * k);
+            let b = Math.floor(Math.random() * k);
 
             // Only divisible numbers
             if (a % b !== 0) {
-                return this.getRandomDivide(spare);
+                return this.getRandomDivide(times, difficulty);
             } 
         
             // True answer
@@ -242,7 +254,7 @@ class Randomath {
 
                 let temp = num[Math.floor(Math.random() * num.length)];
                 if (temp == answer || temp == old.dev) {
-                    return this.getRandomDivide(spare);
+                    return this.getRandomDivide(times, difficulty);
                 } else {
                     fakeAnswers.push(temp);
                     old.dev = temp;
@@ -280,34 +292,27 @@ class Randomath {
     }
 
     /**
-     * Returns a random comparison
+     * Return a random mathematical comparison
      * @public
-     * @param {number} times Number of repeats. Default is 1
+     * @param {number} times defines the function's number of repeats
+     * @param {number} difficulty defines the example(s) difficulty. From 0 to 2 (0 - easy, 1 - medium, 2 - hard)
      */
-    getRandomCompare(times = 1) {
+    getRandomCompare(times = 1, difficulty = 0) {
         // Main arrays 
         let example = [];
-        let __answers = ['>', '<'];
-        let spare = times;
+        let __answers = ['>', '=', '<'];
     
         // Creating new examples. Default = 1 time
         for (let i = 0; i < times; i++) {
-            // Two random number that will be compared
-            let a = Math.floor(Math.random() * 100);
-            let b = Math.floor(Math.random() * 100);
+            // Define the difficulty
+            let k = (difficulty === 0) ? 100 : (difficulty === 1) ? 200 : 300;
 
-            // There are shouldn't be the same numbers
-            if (a === b) return this.getRandomCompare(spare);
-
-            // Variable for an answer
-            let answer;
+            // Two random number that will be added
+            let a = Math.floor(Math.random() * k);
+            let b = Math.floor(Math.random() * k);
             
             // Define the answer
-            if (a > b) {
-                answer = '>';
-            } else {
-                answer = '<';
-            }
+            let answer = (a > b) ? '>' : (a < b) ? '<' : '=';
         
             // Complete the array of example(s)
             example.push({
