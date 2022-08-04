@@ -4,7 +4,11 @@
   "description": "Random math examples of addition, subtraction, multiplication and division with fake answers and true ones.",
   "homepage": "https://github.com/s0ftik3/Randomath#readme",
   "repository": "https://github.com/s0ftik3/Randomath",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "start": "echo Go to /example/app.js and try node app.js"
   },
@@ -13,5 +17,8 @@
     "random"
   ],
   "author": "softik",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.6.3"
+  }
 }

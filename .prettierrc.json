@@ -1,0 +1,10 @@
+{
+  "tabWidth": 2,
+  "endOfLine": "auto",
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "importOrder": ["^@/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
